@@ -1,7 +1,5 @@
 #pragma once
 
-int pos2 = 0;
-std::string exemp2;
 bool S();
 bool S_();
 bool T2();

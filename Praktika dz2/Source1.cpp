@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "C:\Users\Yakov\source\repos\Praktika dz2\Praktika dz2\Header1.h"
+#include "Header1.h"
 
 int pos2 = 0;
-std::string exemp2 = "(1+1)*1";
+std::string exemp2 = "(1+0)*0";
 
 bool S()
 {
@@ -83,4 +83,10 @@ bool F_2()
         return true;
     }
     return true;
+}
+
+int main()
+{
+    std::cout << ((S() && pos2 == exemp2.length()));
+    return 0;
 }
