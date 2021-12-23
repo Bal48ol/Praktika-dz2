@@ -84,9 +84,3 @@ bool F_2()
     }
     return true;
 }
-
-int main2()
-{
-    std::cout << ((S()) && (pos2 == exemp2.length()));
-    return 0;
-}
