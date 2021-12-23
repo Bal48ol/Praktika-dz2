@@ -3,83 +3,84 @@
 #include <string>
 #include "Header1.h"
 
-int pos2 = 0;
-std::string exemp2 = "(1+0)*0";
+int pos = 0;
+std::string exemp = "11+0)*0";
+
 
 bool S()
 {
-    return(T2() && S_());
+    return(T() && S_());
 }
 
 bool S_()
 {
-    if (pos2 == exemp2.length())
+    if (pos == exemp.length())
     {
         return true;
     }
-    if (exemp2[pos2] == '+')
+    if (exemp[pos] == '+')
     {
-        pos2++;
-        return(T2() && S_());
+        pos++;
+        return(T() && S_());
     }
     return true;
 }
 
-bool T2()
+bool T()
 {
-    return(F2() && T_2());
+    return(F() && T_());
 }
 
-bool T_2()
+bool T_()
 {
-    if (pos2 == exemp2.length())
+    if (pos == exemp.length())
     {
         return true;
     }
-    if ((exemp2[pos2] == '(') || (exemp2[pos2] == '0') || (exemp2[pos2] == '1'))
+    if ((exemp[pos] == '(') || (exemp[pos] == '0') || (exemp[pos] == '1'))
     {
-        return (F2() && T_2());
+        return (F() && T_());
     }
     return true;
 }
 
-bool F2()
+bool F()
 {
-    if (pos2 == exemp2.length())
+    if (pos == exemp.length())
     {
         return false;
     }
-    if (exemp2[pos2] == '(')
+    if (exemp[pos] == '(')
     {
-        pos2++;
+        pos++;
         if (!S())
         {
             return false;
         }
-        if (exemp2[pos2] == ')')
+        if (exemp[pos] == ')')
         {
-            pos2++;
-            return F_2();
+            pos++;
+            return F_();
         }
         return false;
     }
-    if (exemp2[pos2] == '0' || exemp2[pos2] == '1')
+    if (exemp[pos] == '0' || exemp[pos] == '1')
     {
-        pos2++;
-        return F_2();
+        pos++;
+        return F_();
     }
     return false;
 }
 
-bool F_2()
+bool F_()
 {
-    if (pos2 == exemp2.length())
+    if (pos == exemp.length())
     {
         return true;
     }
-    if (exemp2[pos2] == '*')
+    if (exemp[pos] == '*')
     {
-        pos2++;
+        pos++;
         return true;
     }
     return true;
@@ -87,6 +88,5 @@ bool F_2()
 
 int main()
 {
-    std::cout << ((S() && pos2 == exemp2.length()));
-    return 0;
+    std::cout << ((S()) && (pos == exemp.length()));
 }

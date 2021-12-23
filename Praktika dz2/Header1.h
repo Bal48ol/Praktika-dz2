@@ -2,7 +2,7 @@
 
 bool S();
 bool S_();
-bool T2();
-bool T_2();
-bool F2();
-bool F_2();
+bool T();
+bool T_();
+bool F();
+bool F_();
